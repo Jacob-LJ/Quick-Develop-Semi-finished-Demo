@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="lph-fW-q5q" customClass="PSLShopCarDetailView">
+            <rect key="frame" x="0.0" y="0.0" width="644" height="475"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-A3-6o3" userLabel="HeaderView" customClass="PackageSelectListBottomBar">
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-EZ-fHq">
+                            <segments>
+                                <segment title="自选婚件"/>
+                                <segment title="套餐婚件"/>
+                            </segments>
+                            <connections>
+                                <action selector="singleOrPackageSegmentSelected:" destination="lph-fW-q5q" eventType="valueChanged" id="ySr-h5-egN"/>
+                            </connections>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgW-wr-lbD">
+                            <state key="normal" title="编辑"/>
+                            <connections>
+                                <action selector="editBtnClick:" destination="lph-fW-q5q" eventType="touchUpInside" id="wCe-Jd-wov"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="QJt-EZ-fHq" firstAttribute="top" secondItem="f2G-A3-6o3" secondAttribute="top" constant="10" id="1AJ-Y3-aqy"/>
+                        <constraint firstAttribute="height" constant="64" id="MhO-8Q-2gL"/>
+                        <constraint firstItem="fgW-wr-lbD" firstAttribute="centerY" secondItem="QJt-EZ-fHq" secondAttribute="centerY" id="aT6-0g-pBu"/>
+                        <constraint firstItem="QJt-EZ-fHq" firstAttribute="centerX" secondItem="f2G-A3-6o3" secondAttribute="centerX" id="plk-YY-moS"/>
+                        <constraint firstAttribute="trailing" secondItem="fgW-wr-lbD" secondAttribute="trailing" constant="20" id="rG7-bE-p4E"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-Yr-XY9">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spf-ef-ewa">
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NXA-h8-zDR">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="lph-fW-q5q" id="NUc-t3-0wa"/>
+                                        <outlet property="delegate" destination="lph-fW-q5q" id="CYL-S5-7pC"/>
+                                    </connections>
+                                </tableView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PhZ-LK-EE3">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="lph-fW-q5q" id="sSr-LZ-5aN"/>
+                                        <outlet property="delegate" destination="lph-fW-q5q" id="fpE-5K-uxf"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="NXA-h8-zDR" secondAttribute="bottom" id="89k-sY-y8b"/>
+                                <constraint firstAttribute="trailing" secondItem="PhZ-LK-EE3" secondAttribute="trailing" id="EZh-03-S8y"/>
+                                <constraint firstItem="PhZ-LK-EE3" firstAttribute="top" secondItem="spf-ef-ewa" secondAttribute="top" id="K0g-gW-bfz"/>
+                                <constraint firstItem="NXA-h8-zDR" firstAttribute="leading" secondItem="spf-ef-ewa" secondAttribute="leading" id="S7a-IO-nhc"/>
+                                <constraint firstAttribute="bottom" secondItem="PhZ-LK-EE3" secondAttribute="bottom" id="Uml-41-y4I"/>
+                                <constraint firstAttribute="width" constant="1288" id="fZI-NZ-hBb"/>
+                                <constraint firstItem="NXA-h8-zDR" firstAttribute="top" secondItem="spf-ef-ewa" secondAttribute="top" id="iLU-J4-Ity"/>
+                                <constraint firstItem="PhZ-LK-EE3" firstAttribute="leading" secondItem="NXA-h8-zDR" secondAttribute="trailing" id="tuL-cd-0Ws"/>
+                                <constraint firstItem="NXA-h8-zDR" firstAttribute="width" secondItem="spf-ef-ewa" secondAttribute="width" multiplier="1:2" id="tut-Ao-au6"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="spf-ef-ewa" secondAttribute="bottom" id="0va-R7-cfO"/>
+                        <constraint firstItem="spf-ef-ewa" firstAttribute="centerY" secondItem="FpC-Yr-XY9" secondAttribute="centerY" id="3QW-Cc-yCd"/>
+                        <constraint firstAttribute="trailing" secondItem="spf-ef-ewa" secondAttribute="trailing" id="JRZ-tr-YTS"/>
+                        <constraint firstItem="spf-ef-ewa" firstAttribute="leading" secondItem="FpC-Yr-XY9" secondAttribute="leading" id="bgC-BE-QdZ"/>
+                        <constraint firstItem="spf-ef-ewa" firstAttribute="top" secondItem="FpC-Yr-XY9" secondAttribute="top" id="dnI-w6-DNf"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="lph-fW-q5q" id="eAg-sI-Ffy"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="f2G-A3-6o3" secondAttribute="trailing" id="9Xr-r1-hq1"/>
+                <constraint firstItem="FpC-Yr-XY9" firstAttribute="top" secondItem="f2G-A3-6o3" secondAttribute="bottom" id="BuO-ia-75x"/>
+                <constraint firstAttribute="trailing" secondItem="FpC-Yr-XY9" secondAttribute="trailing" id="Dpe-ML-gEW"/>
+                <constraint firstItem="f2G-A3-6o3" firstAttribute="top" secondItem="lph-fW-q5q" secondAttribute="top" id="Thg-DB-96k"/>
+                <constraint firstAttribute="bottom" secondItem="FpC-Yr-XY9" secondAttribute="bottom" id="YUk-dS-dum"/>
+                <constraint firstItem="FpC-Yr-XY9" firstAttribute="leading" secondItem="lph-fW-q5q" secondAttribute="leading" id="egP-dd-4wf"/>
+                <constraint firstItem="f2G-A3-6o3" firstAttribute="leading" secondItem="lph-fW-q5q" secondAttribute="leading" id="jHi-PN-cQc"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="editBtn" destination="fgW-wr-lbD" id="Ko3-8f-Y8l"/>
+                <outlet property="listContainerVWidth" destination="fZI-NZ-hBb" id="pQU-HW-3fr"/>
+                <outlet property="packageTableView" destination="PhZ-LK-EE3" id="c8U-5K-WmV"/>
+                <outlet property="scrollView" destination="FpC-Yr-XY9" id="6QF-RO-9e0"/>
+                <outlet property="segControl" destination="QJt-EZ-fHq" id="eTB-0p-iM5"/>
+                <outlet property="selfSelectTableView" destination="NXA-h8-zDR" id="ydg-VY-wy6"/>
+            </connections>
+            <point key="canvasLocation" x="-35" y="50.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StyleSizeCCell" id="gTV-IL-0wX" customClass="StyleSizeCCell">
+            <rect key="frame" x="0.0" y="0.0" width="148" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="148" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-AS-Wxy">
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGs-Ne-nWR">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qGs-Ne-nWR" secondAttribute="trailing" id="DsJ-OO-vUA"/>
+                            <constraint firstAttribute="bottom" secondItem="qGs-Ne-nWR" secondAttribute="bottom" id="hkV-UP-q9s"/>
+                            <constraint firstItem="qGs-Ne-nWR" firstAttribute="top" secondItem="fpD-AS-Wxy" secondAttribute="top" id="jIf-12-hU4"/>
+                            <constraint firstItem="qGs-Ne-nWR" firstAttribute="leading" secondItem="fpD-AS-Wxy" secondAttribute="leading" id="yl1-x6-xva"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fpD-AS-Wxy" secondAttribute="trailing" id="Ioa-5p-mV1"/>
+                <constraint firstAttribute="bottom" secondItem="fpD-AS-Wxy" secondAttribute="bottom" id="U84-9T-OxU"/>
+                <constraint firstItem="fpD-AS-Wxy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aVj-hX-zJv"/>
+                <constraint firstItem="fpD-AS-Wxy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="c82-6J-Ojm"/>
+            </constraints>
+            <size key="customSize" width="148" height="50"/>
+            <connections>
+                <outlet property="descLB" destination="qGs-Ne-nWR" id="D3C-EN-za7"/>
+            </connections>
+            <point key="canvasLocation" x="74" y="52"/>
+        </collectionViewCell>
+    </objects>
+</document>
