@@ -12,3 +12,6 @@
 
 ## case3 : 效果集(有空再拆开成小 demo 2016-10-16)
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/case3.gif)
+
+## case4 : xib的简单collectionView
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/case4.png)
