@@ -15,3 +15,5 @@
 
 ## case4 : xib的简单collectionView
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/case4.png)
+
+## case5 : Predicate 谓词的基本使用介绍
