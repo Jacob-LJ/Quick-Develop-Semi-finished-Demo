@@ -145,12 +145,99 @@
     
     //注意 谓词字符串不区分大小写 你可以 AnD, ANd, 和 AND
     
-    //不等号 "!", 即适用于数字值又适用于字符串值,如果像按字母表书序从头查看所有汽车,可以
+    //不等号 "!", 即适用于数字值又适用于字符串值,如果像按字母表顺序从头查看所有汽车,可以
     NSPredicate *predicate9 = [NSPredicate predicateWithFormat:@"name < 'Newton'"];
     NSArray *result3 = [self.garage filteredArrayUsingPredicate:predicate9];
     NSLog(@"%@",[result3 valueForKey:@"name"]);//BHerbie3, JHerbie4, AHerbie5
         //只是通过首字母对比,并未实际排序
     
+    /*************************************************************************************/
+    
+    
+    /***************** 4 数组运算符 BETWEEN / IN 的使用 *******************************************/
+    
+    /*
+     BETWEEN
+     
+     1 一般 (engine.horsepower > 50) OR (engine.horsepower < 200) 这样的筛选条件表达式较为常见
+        可使用 关键字 'BETWEEN' 来表达 介于两个数值之间的值 的意思 :
+     */
+    NSPredicate *predicate_between = [NSPredicate predicateWithFormat:@"engine.horsepower BETWEEN {58,448}"]; // "{ }"表示数组 BETWEEN将数组第一个元素看做数组下限,第二个元素看做数组上限
+    NSArray *result_between = [self.garage filteredArrayUsingPredicate:predicate_between];
+    NSLog(@"%@",[result_between valueForKey:@"name"]);//RHerbie1, mHerbie2, BHerbie3, JHerbie4
+    
+    //注意, 表示数组上下限值并不包括在内,即 "BETWEEN {58,448}" => "(x > 58) OR (x < 448)"
+    
+    //2.1 使用 %@ 格式说明符,动态表示限制数组
+    NSArray *betweenArray = [NSArray arrayWithObjects:[NSNumber numberWithInt:58], [NSNumber numberWithInt:448], nil];
+    NSPredicate *predicate_between_array = [NSPredicate predicateWithFormat:@"engine.horsepower BETWEEN %@",betweenArray];
+    NSArray *resulut_between_array = [self.garage filteredArrayUsingPredicate:predicate_between_array];
+    NSLog(@"%@",[resulut_between_array valueForKey:@"name"]);//RHerbie1, mHerbie2, BHerbie3, JHerbie4
+    
+    //2.2 使用变量 动态表示限制数组
+    NSPredicate *predicate_Var = [NSPredicate predicateWithFormat:@"engine.horsepower BETWEEN $POWERS"];
+    NSDictionary *VarDict = [NSDictionary dictionaryWithObjectsAndKeys:betweenArray,@"POWERS", nil];
+    predicate_Var = [predicate_Var predicateWithSubstitutionVariables:VarDict];
+    NSArray *relult_between_VarDict = [self.garage filteredArrayUsingPredicate:predicate_Var];
+    NSLog(@"%@",[relult_between_VarDict valueForKey:@"name"]);//RHerbie1, mHerbie2, BHerbie3, JHerbie4
+    
+    // IN
+    NSPredicate *predicate_IN = [NSPredicate predicateWithFormat:@"name IN {'mHerbie2', 'BHerbie3', 'JHerbie4'}"];
+    NSArray *result_IN = [self.garage filteredArrayUsingPredicate:predicate_IN];
+    NSLog(@"%@",[result_IN valueForKey:@"name"]);//mHerbie2, BHerbie3, JHerbie4
+    
+    /*************************************************************************************/
+    
+    
+    /********************************5 SELF 的使用 ******************************************/
+    /*
+     前面的 format predict 在运算符( >, <,!= 等 ),关键词(IN BETWEEN 等)前面使用的都是 key 值名称, 如
+        1 NSPredicate *predicate_between_array = [NSPredicate predicateWithFormat:@"engine.horsepower BETWEEN %@",betweenArray]; 内使用的 engine.horsepower 指car对象内的engine属性的horsepower属性的值
+        2 NSPredicate *predicate_IN = [NSPredicate predicateWithFormat:@"name IN {'mHerbie2', 'BHerbie3', 'JHerbie4'}"]; 内使用的 name 指 car对象内的name属性的值
+     都是获取对象属性的值然后进行对比操作;
+     
+     但是,有时候需要对比操作的并不是一个类似 car 这样对象呢? 而是一个字符串这样简单的值呢? 此时在 format predicate 中又用什么来指代该值?
+     例如问题: 筛选在字符串数组1 @[@"jam", @"Jack", @"jacob",@"kim"] 中的存在 同时存在于 字符串数组2 @[@"mHerbie2", @"BHerbie@", @"JHerbie4", @"Jack", @"kim"] 的元素 (简单来说就是求两个数组的交集)
+     
+     此时就需要使用 SELF 来指代被操作的值
+     
+     */
+    
+    NSArray *names1 = @[@"jam", @"Jack", @"jacob",@"kim"];
+    NSArray *names2 = @[@"mHerbie2", @"BHerbie@", @"JHerbie4", @"Jack", @"kim"];
+    NSPredicate *predicate_SELF = [NSPredicate predicateWithFormat:@"SELF IN %@",names2];
+    NSArray *result_SELF = [names1 filteredArrayUsingPredicate:predicate_SELF];
+    NSLog(@"%@",result_SELF); //Jack, kim
+    
+    /*************************************************************************************/
+    
+    
+    /******************************** 6 针对 字符串 使用的运算符 **************************************/
+    
+    /*
+     BEGINSWITH 检查某字符串是否以另一个字符串开头
+     ENDSWITH   检查某字符串是否以另一个字符串结尾
+     CONTAINS   检查某字符是否在另一个字符串的内部
+     
+     注意, 单单使用上述 字符串运算符是严格区分大小写及是否有重音符的
+     
+     像区分不区分大小写及重音符等则需要添加额外修饰符
+     [c]    不区分大小写 (case insensitive)
+     [d]    不区分发音符号 (diacritic insensitive 即忽略重音符)
+     [cd]   既不区分大小写,也不区分发音符号
+     
+     Herbie 与 "name BEGINSWITH[cd] 'HERB'" 相匹配
+     
+     */
+    
+    /*************************************************************************************/
+    
+    /******************************** 7 LIKE 运算符 即通配运算符 **************************************/
+    /*
+     谓词运算符 "name LIKE '*er*'" 将会与任何含有 er 的名称相匹配, 等效于 CONTAINS
+     谓词运算符 "name LIKE '???er*'" 将会与 Paper Car相匹配,因为其中的 er 前面有3个字符,而 er后面有一些字符. 但它与 Badger 不匹配,因为 Badger 的 er 前面有4个字符.
+     另外 LIKE 也接受 [cd]等修饰符 用于忽略大小写和发音符 的区分
+     */
     /*************************************************************************************/
 }
 
