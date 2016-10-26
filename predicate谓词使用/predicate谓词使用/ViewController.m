@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.garage = [NSMutableArray array];
     
     Car *car1 = [Car makeCarByName:@"RHerbie1" brandName:@"Honda1" enginName:@"CRX1" yearNum:1984 doorNum:2 distance:34000 power:58];
