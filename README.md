@@ -18,6 +18,13 @@
 
 ## case5 : Predicate 谓词的基本使用介绍
 
-## case6 : collectionView 滚动Item顺滑居中即比例缩放CenterAndScaleItemCollectionDemo
+## case6 : collectionView 滚动Item顺滑居中及比例缩放CenterAndScaleItemCollectionDemo
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/CenterAndScaleItemCollectionDemo.gif)
 一行显示很多的Icon，并且距中心点越近的Icon,尺寸越大；距离中心点越远的Icon，尺寸逐渐变小。而且在滚动过程中，也是这种效果。
+
+## case7 : collectionView 滚动Item顺滑居中(使用的是 UIScrollViewDelegate 方法)centerItemSmoothWithScrollViewDelegateMethord
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/centerItemSmoothWithScrollViewDelegateMethord.gif)
+

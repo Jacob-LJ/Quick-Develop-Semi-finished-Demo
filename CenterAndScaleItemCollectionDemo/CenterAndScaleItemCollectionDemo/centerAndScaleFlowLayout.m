@@ -15,21 +15,21 @@
 @implementation centerAndScaleFlowLayout
 
 - (instancetype)init {
-        if(self = [super init]) {
-            
-        }
-        return self;
+    if(self = [super init]) {
+        
     }
+    return self;
+}
 
 - (void)prepareLayout {
-        [super prepareLayout];
-        // 设置为水平滚动
-        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        // 设置每个Item之间的距离
-        self.minimumLineSpacing = 100;
-        // 重新设置Item的尺寸，不然的话，有等比例缩小的可能
-        self.itemSize = CGSizeMake(JAItemWidth, JAItemHeight);
-    }
+    [super prepareLayout];
+    // 设置为水平滚动
+    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    // 设置每个Item之间的距离
+    self.minimumLineSpacing = 100;
+    // 重新设置Item的尺寸，不然的话，有等比例缩小的可能
+    self.itemSize = CGSizeMake(JAItemWidth, JAItemHeight);
+}
 
 #pragma mark - 重写父类的方法
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
@@ -84,16 +84,16 @@
     
         //2. 计算在可视范围的距离中心线最近的Item
         CGFloat minCenterX = CGFLOAT_MAX;
-        CGFloat collectionViewCenterX = proposedContentOffset.x +
-    self.collectionView.frame.size.width * 0.5;
-    for (UICollectionViewLayoutAttributes *attrs in array) {
-                if(ABS(attrs.center.x - collectionViewCenterX) < ABS(minCenterX)){
-                        minCenterX = attrs.center.x - collectionViewCenterX;
-                    }
-            }
+        CGFloat collectionViewCenterX = proposedContentOffset.x + self.collectionView.frame.size.width * 0.5;
+    
+        for (UICollectionViewLayoutAttributes *attrs in array) {
+            if(ABS(attrs.center.x - collectionViewCenterX) < ABS(minCenterX)){
+                    minCenterX = attrs.center.x - collectionViewCenterX;
+                }
+        }
     
         //3. 补回ContentOffset，则正好将Item居中显示
         return CGPointMake(proposedContentOffset.x + minCenterX, proposedContentOffset.y);
-    }
+}
 
 @end
