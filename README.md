@@ -28,3 +28,6 @@
 
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/centerItemSmoothWithScrollViewDelegateMethord.gif)
 
+## case8 : 不同数据源切换CollectionView维持对应的位置效果
+###需要补充说明
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/keepPositon.gif)
