@@ -34,3 +34,7 @@
 
 ## case9 : 简单进度条画法
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/ProgressIndicator.gif)
+
+## case10 : segmentControl 单个按钮颜色自定义
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/segmentControlSetdifferentColor.gif)
+
