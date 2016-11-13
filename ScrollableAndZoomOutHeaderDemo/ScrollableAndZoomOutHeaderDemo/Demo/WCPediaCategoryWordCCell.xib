@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WCPediaCategoryWordCCell" id="gTV-IL-0wX" customClass="WCPediaCategoryWordCCell">
+            <rect key="frame" x="0.0" y="0.0" width="229" height="71"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="229" height="71"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZF-o7-L9n">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJK-p6-38X">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uJK-p6-38X" firstAttribute="centerY" secondItem="EZF-o7-L9n" secondAttribute="centerY" id="M7I-gr-5XQ"/>
+                            <constraint firstItem="uJK-p6-38X" firstAttribute="centerX" secondItem="EZF-o7-L9n" secondAttribute="centerX" id="j8k-qu-ou9"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cg-qQ-UTn">
+                        <color key="backgroundColor" red="1" green="0.45098039220000002" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="4" id="s4z-Bm-7J3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="9cg-qQ-UTn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0Sx-gw-aOx"/>
+                <constraint firstAttribute="trailing" secondItem="EZF-o7-L9n" secondAttribute="trailing" id="5Zx-gd-r6Y"/>
+                <constraint firstAttribute="trailing" secondItem="9cg-qQ-UTn" secondAttribute="trailing" id="CR6-07-1up"/>
+                <constraint firstItem="EZF-o7-L9n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DGM-Ws-ezY"/>
+                <constraint firstAttribute="bottom" secondItem="EZF-o7-L9n" secondAttribute="bottom" id="Qsp-sG-el5"/>
+                <constraint firstItem="EZF-o7-L9n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aiv-Ow-3c1"/>
+                <constraint firstItem="9cg-qQ-UTn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bVs-uj-LVT"/>
+            </constraints>
+            <size key="customSize" width="229" height="71"/>
+            <connections>
+                <outlet property="colorMarkView" destination="9cg-qQ-UTn" id="eP1-fj-xvE"/>
+                <outlet property="titleLB" destination="uJK-p6-38X" id="BUV-S6-XXJ"/>
+            </connections>
+            <point key="canvasLocation" x="115.5" y="62.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

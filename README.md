@@ -38,3 +38,8 @@
 ## case10 : segmentControl 单个按钮颜色自定义
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/segmentControlSetdifferentColor.gif)
 
+## case11 : ScrollableAndZoomOutHeaderDemo 可放大且滚动的BannerHeaderView
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/ScrollableAndZoomOutHeaderDemo.gif)
+
+
+

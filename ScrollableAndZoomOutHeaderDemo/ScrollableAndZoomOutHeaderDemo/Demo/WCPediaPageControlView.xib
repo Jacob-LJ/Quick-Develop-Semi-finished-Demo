@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="UcK-b3-KwZ" customClass="WCPediaPageControlView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Fk7-CF-eFW">
+                    <color key="pageIndicatorTintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </pageControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结婚预算如何定？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVF-Zy-K8F">
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人生只有一次，不在头疼不在没谱，教你结对婚！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5n-Zy-mr6">
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Fk7-CF-eFW" firstAttribute="leading" secondItem="UcK-b3-KwZ" secondAttribute="leading" constant="28" id="HOa-ZA-zH7"/>
+                <constraint firstAttribute="trailing" secondItem="Fk7-CF-eFW" secondAttribute="trailing" constant="28" id="OtL-Xb-fki"/>
+                <constraint firstAttribute="trailing" secondItem="w5n-Zy-mr6" secondAttribute="trailing" constant="28" id="aBG-f9-178"/>
+                <constraint firstItem="CVF-Zy-K8F" firstAttribute="top" secondItem="UcK-b3-KwZ" secondAttribute="top" id="ara-l6-IRx"/>
+                <constraint firstItem="w5n-Zy-mr6" firstAttribute="top" secondItem="CVF-Zy-K8F" secondAttribute="bottom" id="gcq-Cb-88J"/>
+                <constraint firstItem="CVF-Zy-K8F" firstAttribute="leading" secondItem="UcK-b3-KwZ" secondAttribute="leading" constant="28" id="pFK-YT-tea"/>
+                <constraint firstItem="CVF-Zy-K8F" firstAttribute="leading" secondItem="w5n-Zy-mr6" secondAttribute="leading" id="qmC-O6-qab"/>
+                <constraint firstItem="Fk7-CF-eFW" firstAttribute="top" secondItem="CVF-Zy-K8F" secondAttribute="bottom" constant="8" id="vDo-La-ZLD"/>
+                <constraint firstAttribute="trailing" secondItem="CVF-Zy-K8F" secondAttribute="trailing" constant="28" id="ygC-1P-QJO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descLB" destination="w5n-Zy-mr6" id="hfZ-7q-aHv"/>
+                <outlet property="pageControl" destination="Fk7-CF-eFW" id="pGB-9d-s1R"/>
+                <outlet property="titleLB" destination="CVF-Zy-K8F" id="MW8-2U-kWq"/>
+            </connections>
+            <point key="canvasLocation" x="44.5" y="-194"/>
+        </view>
+    </objects>
+</document>

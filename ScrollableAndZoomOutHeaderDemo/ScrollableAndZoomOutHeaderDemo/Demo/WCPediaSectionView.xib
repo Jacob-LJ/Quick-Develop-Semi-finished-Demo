@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="h6g-Vx-UFn">
+            <rect key="frame" x="0.0" y="0.0" width="435" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EeE-fQ-s2X">
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ogP-Pw-STR"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编辑精选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpo-WW-aAh">
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umh-M3-WEZ">
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="2PV-xj-8zj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Umh-M3-WEZ" firstAttribute="centerY" secondItem="lpo-WW-aAh" secondAttribute="centerY" id="4Xg-mK-pWV"/>
+                <constraint firstItem="lpo-WW-aAh" firstAttribute="leading" secondItem="EeE-fQ-s2X" secondAttribute="trailing" constant="19" id="G5t-BF-D6D"/>
+                <constraint firstAttribute="trailing" secondItem="Umh-M3-WEZ" secondAttribute="trailing" constant="20" id="YRU-qb-GAd"/>
+                <constraint firstItem="Umh-M3-WEZ" firstAttribute="leading" secondItem="lpo-WW-aAh" secondAttribute="trailing" constant="19" id="axm-Te-Nd8"/>
+                <constraint firstItem="EeE-fQ-s2X" firstAttribute="leading" secondItem="h6g-Vx-UFn" secondAttribute="leading" constant="20" id="eZD-dT-dQL"/>
+                <constraint firstItem="lpo-WW-aAh" firstAttribute="centerY" secondItem="EeE-fQ-s2X" secondAttribute="centerY" id="fwB-Rf-o01"/>
+                <constraint firstItem="lpo-WW-aAh" firstAttribute="centerX" secondItem="h6g-Vx-UFn" secondAttribute="centerX" id="jxi-yg-ZpQ"/>
+                <constraint firstItem="lpo-WW-aAh" firstAttribute="centerY" secondItem="h6g-Vx-UFn" secondAttribute="centerY" id="kQs-GW-PEF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="19.5" y="-266.5"/>
+        </view>
+    </objects>
+</document>
