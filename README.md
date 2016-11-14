@@ -42,4 +42,6 @@
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/ScrollableAndZoomOutHeaderDemo.gif)
 
 
-
+## case12 : ScrollableAndZoomOutHeaderDemo 仿网易新闻栏目拖动重排添加删除效果
+###参考文章: http://www.huangyibiao.com/archives/1337
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/movingItemLikeNetEasyNewsDemo.gif)
