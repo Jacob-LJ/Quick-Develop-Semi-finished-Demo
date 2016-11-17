@@ -45,3 +45,8 @@
 ## case12 : ScrollableAndZoomOutHeaderDemo 仿网易新闻栏目拖动重排添加删除效果
 ###参考文章: http://www.huangyibiao.com/archives/1337
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/movingItemLikeNetEasyNewsDemo.gif)
+
+## case13 :在类的初始化方法中应该直接调用实例变量
+### 通过 setter 方法在父类中置nil,子类 复写了 setter 方法的 子类 SmithPerson 创建的时候就会报错, 所以"不应该在 init 或 dealloc 方法中调用 getter&setter 方法,而应该直接使用实例变量进行初始化赋值"
+
+## case14 :
