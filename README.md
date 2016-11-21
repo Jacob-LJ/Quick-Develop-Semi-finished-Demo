@@ -55,3 +55,8 @@
 ###fixed
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/transitonParallaxDemo_naibar___leftItemPositionAndBarTintColorFixed.gif)
 
+## case14: Crash_In_beforeiOS10_reloadDataAndlayoutAttributesForSupplementaryViewOfKind/atIndexPath
+### iOS10之前系统, 当CollectionView 调用 reloadData 时遇上layoutAttributesForSupplementaryViewOfKind:atIndexPath时崩溃问题 总结测试model
+####warning    1:iOS10之前系统, 当CollectionView 调用 reloadData 时(在不太确定的时间范围内)即刻调用layoutAttributesForSupplementaryViewOfKind:atIndexPath时 会 崩溃
+####warning    2:iOS10之前系统, 当CollectionView 先调用layoutAttributesForSupplementaryViewOfKind:atIndexPath 时即刻调用reloadData时 不会 崩溃
+####warning    3:一般在界面加载时候回默认进行一次collectionView的 reloadData, 所以在此期间要确保不要调用 layoutAttributesForSupplementaryViewOfKind:atIndexPath 方法
