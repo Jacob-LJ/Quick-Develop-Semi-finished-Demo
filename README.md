@@ -52,4 +52,6 @@
 ## case14 : transitonParallaxDemo
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/transitionParralaxDemo.gif)
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/transitionParralaxCompare.gif)
+###fixed
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/transitonParallaxDemo_naibar___leftItemPositionAndBarTintColorFixed.gif)
 
