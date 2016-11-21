@@ -72,9 +72,11 @@ static CGFloat headerViewMargin = 20;
     
     [self.NavBarBehavior initializeOrRecover];
     
-    if (self.tableView.contentOffset.y == - (backgroundImageVH - headerViewMargin)) {
-        self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
-    }
+    
+    //可能用于再次 push 然后回来的效果设置
+//    if (self.tableView.contentOffset.y == - (backgroundImageVH - headerViewMargin)) {
+//        self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+//    }
     
     
 }

@@ -159,7 +159,14 @@
  *  初始化状态
  */
 - (void)initialize{
+    
+    
     UINavigationBar *navBar    = [self navigationBar];
+    
+    if (!navBar.barTintColor) {
+        navBar.barTintColor = [UIColor whiteColor];
+        NSLog(@"%@",navBar.barTintColor);//注意,需要先设置 bartintColor 起始颜色, 在滚动时候bar才能够产生渐变 效果, 否则 bar 滚动时候没有颜色效果
+    }
     _navBarDidReset            = NO;
     
     navBar.lp_hideSeperateView = YES;

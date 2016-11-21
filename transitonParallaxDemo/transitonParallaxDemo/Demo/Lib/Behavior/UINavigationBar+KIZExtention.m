@@ -40,17 +40,6 @@ static char backgroundView;
     objc_setAssociatedObject(self, &backgroundView, view, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-
-/**
- 当弹出第一个 控制器的时候，navItem会出现莫名的frame问题，第一个控制器的navItem的设置最好放在viewWillAppear里面
- */
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    [self insertSubview:self.lp_backgroundView atIndex:0];
-    
-}
-
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     
     CGFloat alpha, white;
@@ -66,8 +55,9 @@ static char backgroundView;
 
 - (UIView *)lp_backgroundView {
     
+
     [self checkoutBackgroundView];
-    
+    [self insertSubview:self.kiz_backgroundView atIndex:0];
     return self.kiz_backgroundView;
 }
 
