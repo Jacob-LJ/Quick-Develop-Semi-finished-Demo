@@ -60,3 +60,10 @@
 ####warning    1:iOS10之前系统, 当CollectionView 调用 reloadData 时(在不太确定的时间范围内)即刻调用layoutAttributesForSupplementaryViewOfKind:atIndexPath时 会 崩溃
 ####warning    2:iOS10之前系统, 当CollectionView 先调用layoutAttributesForSupplementaryViewOfKind:atIndexPath 时即刻调用reloadData时 不会 崩溃
 ####warning    3:一般在界面加载时候回默认进行一次collectionView的 reloadData, 所以在此期间要确保不要调用 layoutAttributesForSupplementaryViewOfKind:atIndexPath 方法
+
+## case15 (PopRightItemMenuViewDemo): 右上角 pop 出 menuView 
+####参考Demo : https://github.com/KongPro/PopMenuTableView (Commits on Nov 18, 2016版本)
+####对参考 Demo 修改的地方解析:
+####1> 将类方法调用 改为 实例方法调用, 因为源事例通过类方法调用在内部是通过 View.tag 进行获取对应的的 menuView 实例进行的, 这样当项目层级复杂情况下, 难以维护View.tag值的唯一性
+####2> 对源码中 anchorPoint 及 position 的处理简化, 源代码中作者处理 anchorPoint 和 position 的方法感觉看上去并未完全理解这两个 layer 属性的真正含义; 参考文章: http://wonderffee.github.io/blog/2013/10/13/understand-anchorpoint-and-position/
+![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/PopRightItemMenuViewDemo.gif)
