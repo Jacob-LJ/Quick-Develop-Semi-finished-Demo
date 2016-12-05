@@ -68,3 +68,6 @@
 ####1> 将类方法调用 改为 实例方法调用, 因为源事例通过类方法调用在内部是通过 View.tag 进行获取对应的的 menuView 实例进行的, 这样当项目层级复杂情况下, 难以维护View.tag值的唯一性
 ####2> 对源码中 anchorPoint 及 position 的处理简化, 源代码中作者处理 anchorPoint 和 position 的方法感觉看上去并未完全理解这两个 layer 属性的真正含义; 参考文章: http://wonderffee.github.io/blog/2013/10/13/understand-anchorpoint-and-position/
 ![image](https://github.com/Jacob-LJ/Quick-Develop-Semi-finished-Demo/raw/master/Pics/PopRightItemMenuViewDemo.gif)
+
+##case16 (layer_property_learning,学习iOS-Core-Animation-Advanced-Techniques的demo)
+#### iOS-Core-Animation-Advanced-Techniques链接 https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques/blob/master
