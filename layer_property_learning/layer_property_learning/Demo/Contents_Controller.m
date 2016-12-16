@@ -7,6 +7,7 @@
 //
 
 #import "Contents_Controller.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface Contents_Controller ()
 
@@ -34,6 +35,22 @@
     
     //add it directly to our view's layer
     self.contentsView.layer.contents = (__bridge id)image.CGImage; //这样出来的图片模式是按比例填充的,模式不对
+    
+//    //使用 CAShapeLayer来指定View 哪个角是圆角
+//    //define path parameters
+////    CGRect rect = CGRectMake(20, 20, 100, 100);
+//    CGSize radii = CGSizeMake(20, 20);
+//    UIRectCorner corners = UIRectCornerBottomRight|UIRectCornerTopLeft|UIRectCornerTopRight;
+//    
+//    //获取正确的bounds 值
+//    [self.view layoutIfNeeded];
+//    [self.contentsView layoutIfNeeded];
+//    //create path
+//    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.contentsView.layer.bounds byRoundingCorners:corners cornerRadii:radii];
+//    CAShapeLayer *shapeMaskLayer = [CAShapeLayer layer];
+//    shapeMaskLayer.path = path.CGPath;
+//    self.contentsView.layer.mask = shapeMaskLayer;
+    
     
 //2 contentGravity
     //然图片适应这个视图 效果相当于 view.contentMode = UIViewContentModeScaleAspectFit;
